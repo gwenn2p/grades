@@ -18,3 +18,9 @@ library(here)
 grades <- read_csv("grades(1).csv")
 ```
 
+```{r}
+print("the data set countains")
+nrow(grades)
+print("grades")
+```
+
