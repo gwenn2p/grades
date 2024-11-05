@@ -1,0 +1,20 @@
+---
+title: "de Parscau"
+author: "Gwenn de Parscau"
+format: html
+editor: visual
+---
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(stringr)
+```
+
+```{r}
+library(readr)
+here::i_am("grades.Rproj")
+library(here)
+grades <- read_csv("grades(1).csv")
+```
+
