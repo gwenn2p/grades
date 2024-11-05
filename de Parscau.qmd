@@ -88,3 +88,10 @@ ggplot(data_frame_vr_ar, aes(x=grade))+
   geom_bar()
 ```
 
+```{r}
+ggplot(data_frame_vr_ar, aes(x=grade))+
+  geom_bar()+
+  facet_wrap(~group)
+```
+
+
