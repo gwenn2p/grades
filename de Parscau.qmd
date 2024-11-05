@@ -68,3 +68,14 @@ grades |>
   knitr::kable()
 ```
 
+
+```{r}
+nb_grades <- grades |>
+  group_by(id, group) |>
+  mutate(nb_grades=n())
+data_frame_vr_ar <- 
+  nb_grades |>
+  filter(str_detect(course, "Virtual")) |>
+  group_by(id, group, nb_grades) |>
+  slice_tail(n = 5)|> print(data_frame_vr_ar)
+```
