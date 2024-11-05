@@ -32,5 +32,10 @@ grades |>
   knitr::kable() 
 ```
 
+```{r}
+library(ggplot2)
+ggplot(grades, aes(x=group))+
+    geom_bar()
+```
 
 
