@@ -37,5 +37,22 @@ library(ggplot2)
 ggplot(grades, aes(x=group))+
     geom_bar()
 ```
+```{r}
+hacking_grades <-
+  grades |>
+  filter(str_detect(course, "Hacking"))
+```
+
+```{r}
+grades |>
+  group_by(group) |>
+  summarise(mean_hacking_grades = mean(hacking_grades))
+```
+
+```{r}
+ggplot(grades, aes(x=mean_hacking_grades, y = group))+
+  geom_col()
+```
+
 
 
