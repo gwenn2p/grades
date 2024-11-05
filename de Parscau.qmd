@@ -54,5 +54,17 @@ ggplot(grades, aes(x=mean_hacking_grades, y = group))+
   geom_col()
 ```
 
+```{r}
+grades |>
+  group_by(id, group) |>
+  summarise(nb_grades = n()) |>
+  slice_tail(n = 5)
+```
 
+```{r}
+grades |>
+  group_by(id) |>
+  summarise(min = min(grade), max = max(grade),mean = mean(grade), median = median(grade) ) |>
+  knitr::kable()
+```
 
