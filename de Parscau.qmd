@@ -5,6 +5,10 @@ format: html
 editor: visual
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(error = FALSE)
+```
+
 ```{r}
 library(dplyr)
 library(tidyr)
@@ -46,10 +50,13 @@ hacking_grades <-
 ```{r}
 grades |>
   group_by(group) |>
-  summarise(mean_hacking_grades = mean(hacking_grades))
+  summarise(mean_hacking_grades = mean(hacking_grades)) |>
+  slice_tail(n = 5)
 ```
 
 ```{r}
+#| eval : false
+#| code-fold: false
 ggplot(grades, aes(x=mean_hacking_grades, y = group))+
   geom_col()
 ```
@@ -93,5 +100,4 @@ ggplot(data_frame_vr_ar, aes(x=grade))+
   geom_bar()+
   facet_wrap(~group)
 ```
-
 
