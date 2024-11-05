@@ -24,3 +24,13 @@ nrow(grades)
 print("grades")
 ```
 
+```{r}
+grades |>
+  group_by(group) |>
+  distinct(id) |>
+  slice_tail(n=5) |>
+  knitr::kable() 
+```
+
+
+
